@@ -8,18 +8,12 @@ var PORT = 80;
 // View engine setup
 app.set('view engine', 'html');
 app.use(express.static(path.join(__dirname, "/views/index.html")));
-  
-// app.render('email', function (err, html) {
-//     if (err) console.log(err);
-//     console.log(html);
-// });
+
 app.use("/static", express.static("static")); // For serving static files
 app.use(express.urlencoded());
 app.use(express.json());
 
-// app.use("/static", express.static("static")); // For serving static files
-// app.use(express.urlencoded());
-// app.use(express.json());
+
 
 app.get("/", (req, res) => {
   const params = {};
